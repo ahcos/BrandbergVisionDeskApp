@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+   <rowConstraints>
+      <RowConstraints maxHeight="0.0" minHeight="-Infinity" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="-Infinity" prefHeight="0.0" />
+      <RowConstraints maxHeight="180.0" minHeight="180.0" prefHeight="180.0" />
+      <RowConstraints minHeight="120.0" prefHeight="120.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="450.0" prefHeight="450.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints minWidth="450.0" prefWidth="450.0" />
+   </columnConstraints>
+   <children>
+      <Button id="select_single_image" fx:id="select_single_image" mnemonicParsing="false" onAction="#openSingleImage" stylesheets="@app.css" text="Select image..." GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets left="30.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Button>
+      <!--<Button id="select_multi_image" fx:id="select_multi_image" mnemonicParsing="false" onAction="#openMultiImage" stylesheets="@app.css" text="Select multiple Images..." GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <padding>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets right="30.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </Button> -->
+      <ImageView id="image_view" fx:id="image_view" fitHeight="410.0" fitWidth="430.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="15.0" right="15.0" top="35.0" />
+         </GridPane.margin>
+         <image>
+            <Image url="test.jpg" />
+         </image>
+      </ImageView>
+      <Slider id="slider" fx:id="slider" majorTickUnit="100.0" minorTickCount="1"  showTickLabels="true" showTickMarks="true" stylesheets="@app.css" value="70.0" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Slider>
+      <CheckBox id="checkb_person_bow" fx:id="checkb_person_bow" mnemonicParsing="false" onAction="#setPersonWithBowChecked" stylesheets="@app.css" text="Person with bow" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="20.0" top="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox id="checkb_person" fx:id="checkb_person" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#setPersonChecked" selected="true" stylesheets="@app.css" text="Person" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="20.0" top="60.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <CheckBox id="checkb_multi_persons" fx:id="checkb_multi_persons" mnemonicParsing="false" onAction="#setMultiplePersonsChecked" stylesheets="@app.css" text="MultiPersons" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="250.0" right="50.0" top="60.0" />
+         </GridPane.margin>
+      </CheckBox>
+      <Label id="label_treshold" fx:id="label_treshold" contentDisplay="CENTER" stylesheets="@app.css" text="Treshold" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+      </Label>
+      <CheckBox id="checkb_animal" fx:id="checkb_animal" mnemonicParsing="false" onAction="#setAnimalChecked" stylesheets="@app.css" text="Animal" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="20.0" top="80.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </CheckBox>
+      <Label id="label_classifier" fx:id="label_classifier" stylesheets="@app.css" text="Classifier" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="20.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField fx:id="threshold_field" alignment="TOP_RIGHT" maxHeight="30.0" maxWidth="75.0" prefHeight="30.0" prefWidth="75.0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="300.0" right="50.0" top="10.0" />
+         </GridPane.margin>
+      </TextField>
+     <!-- <ProgressBar id="progress_bar" fx:id="progress_bar" prefWidth="375.0" progress="0.76" stylesheets="@app.css" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="TOP">
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </ProgressBar>-->
+      <MenuBar id="main_menubar" fx:id="main_menubar" prefHeight="32.0" prefWidth="441.0" GridPane.rowIndex="1">
+        <menus>
+          <Menu id="main_menubar_file" fx:id="main_menubar_file" mnemonicParsing="false" text="File">
+            <items>
+                  <!--<MenuItem id="main_menubar_file_train" fx:id="main_menubar_file_train" mnemonicParsing="false" onAction="#openNewClassifier" text="Train New Classifier" />-->
+              <MenuItem id="main_menubar_file_quit" fx:id="main_menubar_file_quit" mnemonicParsing="false" onAction="#quitApp" text="Quit" />
+            </items>
+          </Menu>
+          <!--<Menu id="main_menubar_options" fx:id="main_menubar_options" mnemonicParsing="false" text="Options">
+            <items>
+              <MenuItem id="main_menubar_options_prefs" fx:id="main_menubar_options_prefs" mnemonicParsing="false" text="Preferences" />
+            </items>
+          </Menu>-->
+          <Menu id="main_menubar_about" fx:id="main_menubar_about" mnemonicParsing="false" text="About">
+            <items>
+              <MenuItem id="main_menubar_about_about" fx:id="main_menubar_about_about" mnemonicParsing="false" onAction="#openAboutWindow" text="About" />
+            </items>
+          </Menu>
+        </menus>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </MenuBar>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+        </items>
+      </SplitPane>
+   </children>
+
+   <fx:script>
+
+   </fx:script>
+</GridPane>

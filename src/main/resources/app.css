@@ -1,0 +1,39 @@
+.check-box:selected > .box {
+    /* background color for selected checkbox */
+    -fx-background-color:  #168678;
+}
+
+/*.check-box > .box {
+     background color of unselected checkbox 
+    -fx-background-color: grey;
+}*/
+
+.check-box:selected > .box > .mark,
+.check-box:indeterminate  > .box > .mark {
+    /* modify mark color */
+    -fx-background-color:  #0b594b;
+}
+
+.label {
+	-fx-text-fill: #168678;
+	-fx-font-size: 20;
+}
+
+.slider {
+	-fx-color: #168678;
+
+}
+
+.slider .thumb {
+	-fx-pref-height: 30;
+	-fx-pref-width: 30;
+}
+
+.progress-bar .bar {
+    -fx-background-color:
+        -fx-box-border,
+        linear-gradient(to bottom, derive(-fx-accent,95%), derive(-fx-accent,10%)),
+        #168678; /* this line is the background color of the bar */
+    -fx-background-insets: 0, 1, 2;
+    -fx-padding: 0.416667em; /* 5 */
+}
